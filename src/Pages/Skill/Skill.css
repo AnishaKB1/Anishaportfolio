@@ -1,0 +1,192 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/*Skills */
+
+.tech-icons {
+  font-size: 4.5em !important;
+  margin: 15px !important;
+  padding: 10px !important;
+  opacity: 0.93 !important;
+  border: 1.9px solid rgb(163, 163, 163) !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  border-radius: 5px !important;
+  display: table !important;
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  overflow: hidden !important;
+  transition: all 0.4s ease 0s;
+}
+
+.tech-icons:hover {
+  border-color: rgba(15, 14, 15, 0.9) !important;
+  box-shadow: 6px 7px 6px 5px rgba(152, 168, 4, 0.2) !important;
+  transform: scale(1.1); /* Added scale on hover */
+  background-color: #5e5c5c; /* Added background color on hover */
+  color: #fff; /* Added text color on hover */
+}
+
+#skill {
+  margin-top: 50px;
+  font-family: 'Lora', serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+ 
+  /*Skills */
+  
+ /* Recent Works Section */
+
+.recent-works-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  margin-top: 20px;
+}
+
+/* Recent Works Section */
+
+.work-card {
+  width: 350px;
+  height: 550px;
+  margin: 50px;
+  border: none; /* Set border to none for a borderless card */
+  /* border-radius: 10px; */
+  padding: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease 0s;
+  /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); */
+}
+
+.work-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.work-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.work-description {
+  height: 200px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.work-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.work-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.work-card .card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: 'Lora', serif;
+  align-items: center;
+}
+
+#Works {
+  margin-top: 10px;
+  font-family: 'Lora', serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.demo,
+.git {
+  background-color: rgb(105, 104, 104);
+  border-color: rgb(129, 127, 127);
+  font-family: 'Lora', serif;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.demo:hover,
+.git:hover {
+  background-color: rgb(48, 47, 47);
+  border-color: rgb(48, 47, 47);
+}
+
+.demoicon {
+  margin-right: 8px;
+  margin-bottom: 2px;
+  transition: margin-right 0.3s ease-in-out, margin-bottom 0.3s ease-in-out;
+}
+/* Mobile View */
+@media (max-width: 767px) {
+  
+
+  #skill {
+    margin-top: 20px; /* Adjust spacing for mobile view */
+    font-size: 24px; /* Adjust font size for mobile view */
+  }
+
+  .recent-works-row {
+    margin-top: 10px; /* Adjust spacing for mobile view */
+  }
+
+  .work-card {
+    width: 100%; /* Make the card take up the full width */
+    margin: 20px 0; /* Adjust margin for mobile view */
+  }
+
+  /* .work-card img {
+    height: 150px; 
+  } */
+
+  #Works {
+    margin-top: 20px; /* Adjust spacing for mobile view */
+    font-size: 24px; /* Adjust font size for mobile view */
+  }
+}
+
+/* Tablets and Mobiles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tech-icons {
+    font-size: 3.5em !important; /* Adjust font size for tablet view */
+    margin: 12px !important; /* Adjust margin for tablet view */
+    padding: 8px !important; /* Adjust padding for tablet view */
+  }
+
+  #skill {
+    margin-top: 30px; /* Adjust spacing for tablet view */
+    font-size: 28px; /* Adjust font size for tablet view */
+  }
+
+  .recent-works-row {
+    margin-top: 20px; /* Adjust spacing for tablet view */
+  }
+
+  .work-card {
+    width: 85%; /* Adjust width for tablet view */
+    margin: 20px; /* Adjust margin for tablet view */
+  }
+
+  .work-card img {
+    height: 200px; /* Adjust height for tablet view */
+  }
+
+  #Works {
+    margin-top: 30px; /* Adjust spacing for tablet view */
+    font-size: 28px; /* Adjust font size for tablet view */
+  }
+}
