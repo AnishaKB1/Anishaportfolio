@@ -18,14 +18,14 @@ body {
   text-align: center !important;
   border-radius: 5px !important;
   display: table !important;
-  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  box-shadow: 4px 5px 4px 3px rgba(36, 36, 36, 0.137) !important;
   overflow: hidden !important;
   transition: all 0.4s ease 0s;
 }
 
 .tech-icons:hover {
-  border-color: rgba(15, 14, 15, 0.9) !important;
-  box-shadow: 6px 7px 6px 5px rgba(152, 168, 4, 0.2) !important;
+  border-color: rgba(48, 48, 48, 0.9) !important;
+  box-shadow: 6px 7px 6px 5px rgba(68, 68, 68, 0.2) !important;
   transform: scale(1.1); /* Added scale on hover */
   background-color: #5e5c5c; /* Added background color on hover */
   color: #fff; /* Added text color on hover */

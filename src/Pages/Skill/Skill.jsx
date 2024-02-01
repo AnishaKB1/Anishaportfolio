@@ -117,34 +117,10 @@ experience.
           </Card>
         </Col>
 
-        {/* Card 3 */}
-        <Col xs={12} md={4}>
-          <Card className='work-card'>
-            <Card.Img variant='top' src={todo} />
-            <Card.Body>
-              <Card.Title>To do App
-</Card.Title>
-              <Card.Text className='work-description'>
-              A MERN-based Todo app is a web application that utilizes
-MongoDB, Express.js, React.js, and Node.js to enable users to
-efficiently manage and organize their tasks and to-do lists in realtime.
 
-              </Card.Text>
-              <div className='work-buttons'>
-                <Button className='git' href='https://github.com/AnishaKB1/Todoappexam.git' target='_blank'>
-                  <DiGithubAlt /> GitHub
-                </Button>
-                <Button className='demo' href='https://neon-sunflower-e3783a.netlify.app/' target='_blank'>
-                <CgWebsite className='demoicon'/>
-                    Demo
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-       
-         {/* Card 4 */}
-        <Col xs={12} md={4}>
+
+  {/* Card 3 */}
+  <Col xs={12} md={4}>
           <Card className='work-card'>
             <Card.Img variant='top' src={ictak} />
             <Card.Body>
@@ -170,6 +146,36 @@ JS, and Node JS.
             </Card.Body>
           </Card>
         </Col>
+
+
+        
+        {/* Card 4 */}
+        <Col xs={12} md={4}>
+          <Card className='work-card'>
+            <Card.Img variant='top' src={todo} />
+            <Card.Body>
+              <Card.Title>To do App
+</Card.Title>
+              <Card.Text className='work-description'>
+              A MERN-based Todo app is a web application that utilizes
+MongoDB, Express.js, React.js, and Node.js to enable users to
+efficiently manage and organize their tasks and to-do lists in realtime.
+
+              </Card.Text>
+              <div className='work-buttons'>
+                <Button className='git' href='https://github.com/AnishaKB1/Todoappexam.git' target='_blank'>
+                  <DiGithubAlt /> GitHub
+                </Button>
+                <Button className='demo' href='https://neon-sunflower-e3783a.netlify.app/' target='_blank'>
+                <CgWebsite className='demoicon'/>
+                    Demo
+                </Button>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+       
+       
       </Row>
 
 

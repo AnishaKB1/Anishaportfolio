@@ -84,9 +84,9 @@ const Navbar = () => {
                   style={{ color: 'black', textDecoration: 'none' }}
                 >
                   <EmailIcon
-                    color="primary"
+                  
                     fontSize="large"
-                    style={{ marginLeft: '15px', marginTop: '20px' }}
+                    style={{ marginLeft: '3px', marginTop: '20px' ,  color:"gray"}}
                   />
                 </a>
               </Typography>
