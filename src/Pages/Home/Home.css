@@ -130,6 +130,10 @@
     margin-right: 10px;
     font-size: 16px; /* Adjust font size for better readability on smaller screens */
   }
+  
+  #hi,#name,#para{
+    font-size: 20px;
+  }
 }
 
 /* iPhone SE and XR */
@@ -142,6 +146,10 @@
   .intropara1,
   .intropara2 {
     font-size: 14px; /* Further reduce font size for smaller devices */
+  }
+
+  #hi,#name,#para{
+    font-size: 20px;
   }
 }
 
@@ -167,5 +175,26 @@
     margin-left: 20px; /* Adjust margin for paragraphs on tablets and smaller screens */
     margin-right: 20px;
     font-size: 18px; /* Increase font size for better readability on tablets */
+  }
+}
+
+
+/* iPhone 12 Pro */
+@media (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  .image-container {
+    max-width: 350px; /* Adjust maximum width for iPhone 12 Pro */
+  }
+
+  .intropara,
+  .intropara1,
+  .intropara2 {
+    font-size: 16px; /* Adjust font size for iPhone 12 Pro */
+  }
+  #introhead{
+    font-size: 27px;
+  }
+
+  #hi, #name, #para {
+    font-size: 18px; /* Adjust font size for iPhone 12 Pro */
   }
 }
