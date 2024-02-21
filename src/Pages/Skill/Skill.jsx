@@ -75,7 +75,7 @@ const Skill = () => {
 </Card.Title>
               <Card.Text className='work-description'>
               Experienced MERN stack developer skilled in creating user-friendly blog apps. Proficient in optimizing MongoDB storage, implementing Express.js server logic, crafting responsive UIs with React.js, and managing backend operations using Node.js. 
-              Passionate about enhancing blogging experiences through MERN technologies.
+              Passionate about enhancing blogging experiences through MERN.
               </Card.Text>
               <div className='work-buttons'>
                 <Button className='git' href='https://github.com/AnishaKB1/Blognewapp.git' target='_blank'>
