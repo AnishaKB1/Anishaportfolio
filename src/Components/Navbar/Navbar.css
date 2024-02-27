@@ -1,70 +1,148 @@
-
-/*  Navbar.jsx */
-
 #anisha {
-    font-size: 24px; /* Increase the font size for a more attractive heading */
-    font-family: 'Lora', serif;
-    color: rgb(68, 68, 68);
-    margin-top: 20px;
-    margin-left: 100px;
-  }
-  
-  .nav {
-    display: flex; /* Arrange buttons in a horizontal line */
-    align-items: center; /* Center align buttons vertically */
-  }
-  
-  #ovalButton {
-    color: rgb(248, 250, 244);
-   
-    font-size: large;
-    margin-right: 20px; /* Add some spacing between buttons */
-    width: 90px;
-    height: 40px;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: background-color 0.3s ease;
-  }
-  
-  #ovalButton:hover {
-    color:white !important;
-    background-color:rgb(54, 54, 54);
-  }
-   
-  #resume:hover{
-    color:white !important;
-  }
-  
-  #menu-appbar a {
-    color: black; /* Set the text color for menu items */
-    text-decoration: none;
-  }
-  
-  #anisha h5 {
-    margin-right: 20px; /* Add some spacing to the right of the heading */
-  }
-  
-  
-  /*  NAvbar.jsx */
-/* Mobile View */
-@media (max-width: 767px) {
+  font-size: 24px;
+  font-family: 'Lora', serif;
+  color: rgb(68, 68, 68);
+  margin-top: 20px;
+  position: relative;
+  margin-left: 30px !important;
+}
+
+
+
+/* Desktop view */
+@media only screen and (min-width: 1025px) {
   #anisha {
-    text-align: center; /* Center the text on mobile view */
-    margin-bottom: 10px; /* Add some space below the text for better spacing */
-  }
-
-  #anisha h5 {
-    display: inline-block; /* Display the h5 element inline for horizontal arrangement */
-    margin-right: 10px; /* Adjust spacing for mobile view */
+    text-align: left;
+    margin-right: auto;
   }
 }
 
-/* Tablets and Mobiles */
-@media (max-width: 1024px) {
-  #anisha h5 {
-    display: inline-block; /* Display the h5 element inline for horizontal arrangement */
-    margin-right: 20px; /* Add spacing for both tablets and mobiles */
-  }
+.nav {
+  display: flex;
+  align-items: center;
 }
 
+#ovalButton {
+  color: rgb(248, 250, 244);
+  font-size: large;
+  margin-right: 20px;
+  width: 90px;
+  height: 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+#ovalButton:hover {
+  color: white !important;
+  background-color: rgb(54, 54, 54);
+}
+
+#resume:hover {
+  color: white !important;
+}
+
+#menu-appbar a {
+  color: black;
+  text-decoration: none;
+}
+
+
+
+
+/* Mobile view css */
+.mobile-topbar {
+  display: none;
+}
+
+.mobile-icons {
+  display: none;
+}
+
+.mobile-sidebar {
+  display: none;
+}
+
+@media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   
+
+  #anisha {
+    text-align: right;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  #anisha h5 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 20px;
+    margin-left: 0 !important; /* Reset left margin for mobile view */
+  }
+  .desktop-topbar {
+    display: none;
+  }
+
+  .mobile-icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .mobile-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    color: #0e0d0d;
+  }
+
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0; /* Change right to left */
+    bottom: 0;
+    width: 80%;
+    max-width: 200px;
+    background-color: #5a5959;
+    box-shadow: -1px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 1001;
+    display: block;
+  }
+
+  .mobile-sidebar-toggle {
+    cursor: pointer;
+    font-size: 25px;
+    color: #0f0f0f;
+  }
+
+  .sidebar-list {
+    padding: 0;
+    list-style: none;
+    margin-top: 30px;
+  }
+
+  .sidebar-list-item {
+    margin-bottom: 10px;
+    color: black;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .sidebar-list-item:hover {
+    color: rgb(12, 12, 12);
+  }
+
+  .close-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    margin-left: 140px;
+  }
+}
+

@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  AppBar,
   Box,
   Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
   Typography,
   createTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import ClearIcon from "@mui/icons-material/Cancel";
 import { Link } from "react-router-dom";
 import EmailIcon from "@mui/icons-material/Email";
 import "./Navbar.css";
@@ -28,65 +24,42 @@ const Navbar = () => {
     },
   });
 
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [openMobileSidebar, setOpenMobileSidebar] = useState(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const handleMobileSidebarToggle = () => {
+    setOpenMobileSidebar(!openMobileSidebar);
   };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    setOpenMobileSidebar(false);
   };
 
   return (
-    <AppBar
-      position="static"
-      style={{
-        backgroundColor: theme.palette.background.default,
-        width: "100%",
-        borderBottom: "none",
-        boxShadow: "none",
-      }}
-    >
-      <Toolbar disableGutters>
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: { xs: "flex", md: "none" },
-            width: "100%",
-          }}
+    <div>
+      <Box
+  sx={{
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
+      {/* Mobile View */}
+      <div className="mobile-topbar">
+        <div
+          className="mobile-sidebar-toggle"
+          onClick={handleMobileSidebarToggle}
         >
-          <IconButton
-            size="large"
-            aria-label="menu"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleOpenNavMenu}
-            style={{ color: "black" }}
-          >
-            <MenuIcon />
-          </IconButton>
+          {openMobileSidebar ? <ClearIcon /> : <MenuIcon />}
+        </div>
 
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-            sx={{
-              display: { xs: "block", md: "none" },
-            }}
-          >
-            <MenuItem onClick={handleCloseNavMenu}>
-              <Typography textAlign="center">
+        {openMobileSidebar && (
+          <aside className="mobile-sidebar">
+            <div className="close-icon" onClick={handleCloseNavMenu}>
+              <ClearIcon />
+            </div>
+            <ul className="sidebar-list">
+              <li className="sidebar-list-item" onClick={handleCloseNavMenu}>
                 <a
                   href={`mailto:anishakb4@gmail.com?subject=Hi, How can I help you?&body=Dear Anisha,`}
                   style={{ color: "black", textDecoration: "none" }}
@@ -96,207 +69,223 @@ const Navbar = () => {
                     style={{
                       marginLeft: "3px",
                       marginTop: "20px",
-                      color: "gray",
+                      color: "white",
                     }}
                   />
                 </a>
-              </Typography>
-            </MenuItem>
-            <MenuItem>
-              <Typography textAlign="center">
+              </li>
+              <li className="sidebar-list-item" onClick={handleCloseNavMenu}>
                 <Link
                   to={"/"}
                   style={{
-                    color: "gray",
+                    color: "white",
                     textDecoration: "none",
                     fontFamily: "Lora, serif",
                   }}
                 >
                   Home
                 </Link>
-              </Typography>
-            </MenuItem>
-
-            <MenuItem>
-              <Typography textAlign="center">
+              </li>
+              <li className="sidebar-list-item" onClick={handleCloseNavMenu}>
                 <Link
                   to={"/Skill"}
                   style={{
-                    color: "gray",
+                    color: "white",
                     textDecoration: "none",
                     fontFamily: "Lora, serif",
                   }}
                 >
                   Skill
                 </Link>
-              </Typography>
-            </MenuItem>
-
-            <MenuItem>
-              <Typography textAlign="center">
+              </li>
+              <li className="sidebar-list-item" onClick={handleCloseNavMenu}>
                 <a
                   href={ANISHA}
                   download="ANISHA.pdf"
                   id="resume"
                   style={{
-                    color: "gray",
+                    color: "white",
                     textDecoration: "none",
                     fontFamily: "Lora, serif",
                   }}
                 >
                   Resume
                 </a>
-              </Typography>
-            </MenuItem>
-          </Menu>
-        </Box>
+              </li>
+            </ul>
+          </aside>
+        )}
+      </div>
+
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: "flex",
+          justifyContent: "space-between",
+         
+        }}
+      > 
+
+        
+         {/* Heading */}
+         <Box
+  sx={{
+    display: { xs: "flex", md: "flex" },
+    justifyContent: "flex-end",
+    alignItems: "center",
+    paddingRight: { xs: "15px", md: "15px" }, // Adjust padding for different screen sizes
+    '@media only screen and (max-width: 600px)': { // Mobile devices
+      justifyContent: "flex-start", // Align content to the left for mobile view
+      marginLeft: "auto",
+    },
+    '@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)': { // iPad Air
+      justifyContent: "flex-end", // Align content to the right for iPad Air
+      marginLeft: "auto",
+    },
+    '@media only screen and (min-device-width: 375px) and (max-device-width: 414px)': { // iPhone XR, SE, 12 Pro
+      justifyContent: "flex-start", // Align content to the left for specific iPhones
+    },
+  
+  }}
+>
+  <Typography textAlign="left" className="anisha">
+    <h5
+      id="anisha"
+      style={{
+        marginRight: "30px",
+        color: "gray",
+        fontFamily: "Lora, serif",
+      }}
+    >
+      Anisha K B
+    </h5>
+  </Typography>
+</Box>
+
+
+  </Box>
+
+
 
         <Box
           sx={{
-            flexGrow: 1,
-            display: "flex",
-            justifyContent: "space-between",
+            display: { xs: "none", md: "flex" },
+            justifyContent: "flex-end",
             alignItems: "center",
+            paddingRight: "15px",
           }}
         >
-          {/* Left side */}
-          <Box>
-            <Typography textAlign="left" className="anisha">
-              <h5
-                id="anisha"
-                style={{
-                  marginRight: "20px",
-                  color: "gray",
-                  fontFamily: "Lora, serif",
-                }}
-              >
-                Anisha K B
-              </h5>
-            </Typography>
-          </Box>
-
-          <Box
-            sx={{
-              display: { xs: "none", md: "flex" },
-              justifyContent: "flex-end",
-              alignItems: "center",
-              paddingRight: "15px",
-            }}
+          <a
+            href="mailto:anishakb4@gmail.com?subject=Hi, How can I help you?&body=Dear Anisha,"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
           >
-            <a
-              href="mailto:anishakb4@gmail.com?subject=Hi, How can I help you?&body=Dear Anisha,"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{
+                my: 2,
+                color: "gray",
+                fontSize: "large",
+                fontFamily: "Lora, serif",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "gray",
-
-                  fontSize: "large",
-                  fontFamily: "Lora, serif",
+              <EmailIcon
+                color="dark"
+                fontSize="large"
+                style={{
+                  marginLeft: "0px",
+                  marginTop: "1px",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
-              >
-                <EmailIcon
-                  color="dark"
-                  fontSize="large"
-                  style={{
-                    marginLeft: "0px",
-                    marginTop: "1px",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                />
-              </Button>
-            </a>
+              />
+            </Button>
+          </a>
 
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{
-                my: 2,
+          <Button
+            onClick={handleCloseNavMenu}
+            sx={{
+              my: 2,
+              color: "gray",
+              display: "block",
+              fontSize: "large",
+              textTransform: "capitalize",
+              fontFamily: "Lora, serif",
+            }}
+          >
+            <Link
+              to={"/"}
+              style={{
                 color: "gray",
-                display: "block",
-                fontSize: "large",
-
-                textTransform: "capitalize",
+                textDecoration: "none",
                 fontFamily: "Lora, serif",
               }}
             >
-              <Link
-                to={"/"}
-                style={{
-                  color: "gray",
-                  textDecoration: "none",
-                  fontFamily: "Lora, serif",
-                }}
-              >
-                Home
-              </Link>
-            </Button>
+              Home
+            </Link>
+          </Button>
 
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{
-                my: 2,
+          <Button
+            onClick={handleCloseNavMenu}
+            sx={{
+              my: 2,
+              color: "gray",
+              display: "block",
+              fontSize: "large",
+              textTransform: "capitalize",
+              fontFamily: "Lora, serif",
+            }}
+          >
+            <Link
+              to={"/Skill"}
+              style={{
                 color: "gray",
-                display: "block",
-                fontSize: "large",
-                textTransform: "capitalize",
+                textDecoration: "none",
                 fontFamily: "Lora, serif",
               }}
             >
-              <Link
-                to={"/Skill"}
-                style={{
-                  color: "gray",
-                  textDecoration: "none",
-                  fontFamily: "Lora, serif",
-                }}
-              >
-                Skill
-              </Link>
-            </Button>
+              Skill
+            </Link>
+          </Button>
 
-            <Button
-              id="ovalButton"
-              onClick={handleCloseNavMenu}
-              sx={{
-                my: 2,
-                display: "block",
-                fontSize: "large",
-                textTransform: "capitalize",
-                fontFamily: "Lora, serif",
-                color: "gray",
-                marginTop: "10px",
-                "&:hover": {
-                  backgroundColor: "gray",
-                  "& a": {
-                    color: "white",
-                  },
+          <Button
+            id="ovalButton"
+            onClick={handleCloseNavMenu}
+            sx={{
+              my: 2,
+              display: "block",
+              fontSize: "large",
+              textTransform: "capitalize",
+              fontFamily: "Lora, serif",
+              color: "gray",
+              marginTop: "10px",
+              "&:hover": {
+                backgroundColor: "gray",
+                "& a": {
+                  color: "white",
                 },
+              },
+            }}
+          >
+            <a
+              href={ANISHA}
+              download="ANISHA.pdf"
+              id="resume"
+              style={{
+                color: "gray",
+                textDecoration: "none",
+                fontFamily: "Lora, serif",
               }}
             >
-              <a
-                href={ANISHA}
-                download="ANISHA.pdf"
-                id="resume"
-                style={{
-                  color: "gray",
-                  textDecoration: "none",
-                  fontFamily: "Lora, serif",
-                }}
-              >
-                Resume
-              </a>
-            </Button>
-          </Box>
+              Resume
+            </a>
+          </Button>
         </Box>
-      </Toolbar>
-    </AppBar>
+      </Box>
+    </div>
   );
 };
 
