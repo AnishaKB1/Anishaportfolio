@@ -3,7 +3,7 @@ import {
   Box,
   Button,
   Typography,
-  createTheme,
+  // createTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Cancel";
@@ -13,16 +13,16 @@ import "./Navbar.css";
 import ANISHA from "./ANISHA.pdf";
 
 const Navbar = () => {
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#2196f3", // Set your desired primary color
-      },
-      background: {
-        default: "#ffffff", // Set your desired background color
-      },
-    },
-  });
+  // const theme = createTheme({
+  //   palette: {
+  //     primary: {
+  //       main: "#2196f3", // Set your desired primary color
+  //     },
+  //     background: {
+  //       default: "#ffffff", // Set your desired background color
+  //     },
+  //   },
+  // });
 
   const [openMobileSidebar, setOpenMobileSidebar] = useState(false);
 
